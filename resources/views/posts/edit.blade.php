@@ -10,16 +10,14 @@
 <div class="row">
     {!! Form::model($post, ['route' => ['posts.update', $post->id]]) !!}
             <div class="col-md-8">
+                {{ Form::label('title', 'Title') }}
                 {{Form::text('title',null,["class" => 'form-control'])}} 
 
+                {{ Form::label('body', "Body:", ['class' => 'form-spacing-top']) }}
                 {{ Form::textarea('body', null  ,['class' => 'form-control'])}}
-                    {{-- <h1>  Post id is: {{$post->id}}</h1>    
-                    
-                            <h1>{{ $post->title }}</h1>
-
-                            <p class="lead">{{ $post->body }}</p>   --}}
-            </div> 
-                    {{-- SideBar --}} 
+        
+                            {{-- <p class="lead">{{ $post->body }}</p>   --}}
+            </div>  
 
                     <div class="col-md-4 bg bg-light text text-center mt-4 p-3 border border-dark">
                             <div>
