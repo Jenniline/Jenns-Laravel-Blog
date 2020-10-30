@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 use App\Post;
@@ -15,10 +16,20 @@ class PostController extends Controller
      */
     public function index()
     {
-        //create a variable and store all the blog posts in it from the database
-        $posts = Post::all();
+        //create a variable $posts and store all the blog posts in it from the database
         // return a view and pass in the above variable
+        
+        $posts = Post::all();
+        $posts = Post::orderBy('id', 'asc')->paginate(5);
         return view('posts.index')->withPosts($posts);
+
+        // For large large datasets when you do not need to display a link for each page number when rendering your view
+        $posts = Post::orderBy('id', 'asc')->simplePaginate(5);
+
+        // $posts = DB::table('posts')->paginate(5);
+        // return view('posts.index', ['posts' => $posts]);
+
+
     }
 
     /**

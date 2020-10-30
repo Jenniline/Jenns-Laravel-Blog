@@ -6,12 +6,16 @@
 
 @section('content') 
 
+{{-- <div class="col-md-2">
+    <a href=" {{view('pages.welcome')}}" class="btn btn-primary btn-block btn-h1-spacing p-3"> Go to home </a>
+</div> --}}
+
 <div class="row">
     <div class="col-md-8">
    <h1>  Post id is: {{$post->id}}</h1>
    
       Post title:  <h1>{{ $post->title }}</h1>
-     Post body:   <p class="lead">{{ $post->body }}</p>  
+     Post body:   <h1 class="lead">{{ $post->body }}</h1>  
     </div> 
             {{-- SideBar --}} 
 
@@ -40,8 +44,11 @@
                     </div>
                 </div>
             </div>
-    
-</div>
+        </div>
+
+
+
+
 {{-- 
 <div class="col-md-2">
     <a href=" {{view('pages.welcome')}}" class="btn btn-primary btn-block btn-h1-spacing p-3"> All posts </a>

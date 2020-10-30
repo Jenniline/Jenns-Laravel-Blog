@@ -49,6 +49,11 @@
           @endforeach
         </tbody>
       </table>
+
+      {{-- Page pagination --}}
+      <div class="center">
+        {{ $posts->links() }}
+      </div>
       
 
 @endsection
