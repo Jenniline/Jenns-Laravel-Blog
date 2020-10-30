@@ -10,8 +10,8 @@
     <div class="col-md-8">
    <h1>  Post id is: {{$post->id}}</h1>
    
-        <h1>{{ $post->title }}</h1>
-        <p class="lead">{{ $post->body }}</p>  
+      Post title:  <h1>{{ $post->title }}</h1>
+     Post body:   <p class="lead">{{ $post->body }}</p>  
     </div> 
             {{-- SideBar --}} 
 
@@ -42,6 +42,10 @@
             </div>
     
 </div>
+{{-- 
+<div class="col-md-2">
+    <a href=" {{view('pages.welcome')}}" class="btn btn-primary btn-block btn-h1-spacing p-3"> All posts </a>
+</div> --}}
 
 {{-- <div class="container">
     <div class="row">
