@@ -82,7 +82,8 @@ class PostController extends Controller
 
         //to view a specific post 
         $post=Post::find($id);
-         return view('posts.show')->withPost($post);
+        //  return view('posts.show')->withPosts('',$post);
+        return view('posts.show')->withPost($post);
 
     }
 

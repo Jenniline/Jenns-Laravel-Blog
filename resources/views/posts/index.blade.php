@@ -51,9 +51,18 @@
       </table>
 
       {{-- Page pagination --}}
-      <div class="center">
-        {{ $posts->links() }}
+      <div class="container">
+        <div class="row"> 
+            <div class=col-8>
+              {{ $posts->links() }}
+            </div>
+            
+            <div class=col-4>
+                Page {{$posts->currentPage()}} of {{$posts->total()}}
+            </div>
+        </div>     
       </div>
-      
+             
+
 
 @endsection

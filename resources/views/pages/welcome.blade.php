@@ -31,38 +31,16 @@
       <!-- end of header container -->
 
 
-      <div class="row">
+      <div class="row"> 
           <div class="col-md-8">
-              <div class="post">
-                  <h3>Post Title</h3> 
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolorum voluptatibus, fugiat sit, ipsam incidunt mollitia repellat suscipit quam similique amet quas eligendi eum rem molestias tempora ducimus qui. Repellendus.</p> 
-                  <a href="#" class="btn btn-primary">Read more</a>
-              </div>
-
-              <hr>
-              
-              <div class="post">
-                  <h3>Post Title</h3> 
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolorum voluptatibus, fugiat sit, ipsam incidunt mollitia repellat suscipit quam similique amet quas eligendi eum rem molestias tempora ducimus qui. Repellendus.</p> 
-                  <a href="#" class="btn btn-primary">Read more</a>
-              </div>
-
-              <hr>
-
-              <div class="post">
-                  <h3>Post Title</h3> 
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolorum voluptatibus, fugiat sit, ipsam incidunt mollitia repellat suscipit quam similique amet quas eligendi eum rem molestias tempora ducimus qui. Repellendus.</p> 
-                  <a href="#" class="btn btn-primary">Read more</a>
-              </div>
-
-              <hr>
-
-              <div class="post">
-                  <h3>Post Title</h3> 
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolorum voluptatibus, fugiat sit, ipsam incidunt mollitia repellat suscipit quam similique amet quas eligendi eum rem molestias tempora ducimus qui. Repellendus.</p> 
-                  <a href="#" class="btn btn-primary">Read more</a>
-              </div>
-
+                @foreach($posts as $post)
+                <div class="post">
+                    <h3> {{substr($post->title,0,100)}} {{strlen($post->title) > 50 ? "..." : ""}} </h3>
+                    <p> {{substr($post->body,0,100)}} {{strlen($post->body) > 300 ? "..." : ""}} </p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+                    <hr>
+                @endforeach
           </div>
 
           <div class="col-md-3 col-md-offset-1">Sidebar</div>

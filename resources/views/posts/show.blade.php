@@ -7,15 +7,15 @@
 @section('content') 
 
 {{-- <div class="col-md-2">
-    <a href=" {{view('pages.welcome')}}" class="btn btn-primary btn-block btn-h1-spacing p-3"> Go to home </a>
+    <a href=" {{route('pages.welcome',$post->id)}}" class="btn btn-primary btn-block btn-h1-spacing p-3"> Go to home </a>
 </div> --}}
 
 <div class="row">
     <div class="col-md-8">
-   <h1>  Post id is: {{$post->id}}</h1>
+   <h1>  Post id is: {{ $post->id }}</h1>
    
       Post title:  <h1>{{ $post->title }}</h1>
-     Post body:   <h1 class="lead">{{ $post->body }}</h1>  
+     Post body:   <p class="lead">{{ $post->body }}</p>  
     </div> 
             {{-- SideBar --}} 
 
@@ -41,6 +41,12 @@
                         {{!! Form::submit('Delete',['class' => 'btn btn-danger btn-block']) !!}}
 
                         {{!! Form::close() !!}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        {{Html::linkRoute('posts.index','<< See All Posts', [], ['class' => 'btn btn-default btn-block btn-h1-spacing'])}}
                     </div>
                 </div>
             </div>
