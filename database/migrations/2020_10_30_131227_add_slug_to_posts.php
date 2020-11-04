@@ -13,8 +13,12 @@ class AddSlugToPosts extends Migration
      */
     public function up()
     {
-       Schema::table('posts', function (Blueprint $table) {
-            //
+    //    Schema::table('posts', function (Blueprint $table) {
+    //         //
+    //     });
+
+         Schema::table('posts', function (Blueprint $table) {
+            $table->string('slug')->unique()->after('body');
         });
     }
 
@@ -25,8 +29,13 @@ class AddSlugToPosts extends Migration
      */
     public function down()
     {
+         Schema::table('posts', function (Blueprint $table) {
+             $table->dropColumn('slug');
+          });
+
+
         // Schema::table('posts', function (Blueprint $table) {
-        //     $table->dropColumn('slug');
-        //  });
+        //     //
+        // });
     }
 }

@@ -20,14 +20,22 @@
             {{-- SideBar --}} 
 
             <div class="col-md-4 bg bg-light text text-center mt-4 p-3 border border-dark">
+
+                <div>
+
+                    <label> Url:</label>
+                  <a href=" {{ url($post->slug) }}">{{ url($post->slug)  }}  </a> 
+                <br>
                     <div>
-                        <strong>Created at: </strong>
-                    <span>{{date('M j, Y H:i', strtotime($post->created_at))}}</span>
+
+                       
+                            <label>Created at: </label>
+                        <span>{{date('M j, Y H:i', strtotime($post->created_at))}}</span>
                     </div>
             <br>
                     <div>
-                        <strong>Last Updated at: </strong>
-                    <span>{{ date('M j, Y H:i', strtotime($post->updated_at))}}</span>
+                            <label>Last Updated at: </label>
+                        <span>{{ date('M j, Y H:i', strtotime($post->updated_at))}}</span>
                     </div>
               
 
