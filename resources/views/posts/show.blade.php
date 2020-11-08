@@ -24,7 +24,7 @@
                 <div>
 
                     <label> Url:</label>
-                  <a href=" {{ url($post->slug) }}">{{ url($post->slug)  }}  </a> 
+                <a href="{{ route('blog.single', $post->slug) }}"> {{ route('blog.single', $post->slug)}} </a> 
                 <br>
                     <div>
 

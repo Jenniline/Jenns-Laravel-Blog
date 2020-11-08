@@ -37,7 +37,7 @@
                 <div class="post">
                     <h3> {{substr($post->title,0,100)}} {{strlen($post->title) > 50 ? "..." : ""}} </h3>
                     <p> {{substr($post->body,0,100)}} {{strlen($post->body) > 300 ? "..." : ""}} </p>
-                    <a href="#" class="btn btn-primary">Read more</a>
+                    <a href=" {{url('blog/'.$post->slug)}} " class="btn btn-primary">Read more</a>
                 </div>
                     <hr>
                 @endforeach
