@@ -28,8 +28,6 @@ class PostController extends Controller
 
         // $posts = DB::table('posts')->paginate(5);
         // return view('posts.index', ['posts' => $posts]);
-
-
     }
 
     /**

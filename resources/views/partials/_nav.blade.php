@@ -9,6 +9,10 @@
         <li class="nav-item {{Request::is('/') ? "active" : ""}} " >
           <a class="nav-link" href="/">Home</a>
         </li>
+
+        <li class="nav-item  {{Request::is('blog') ? "active" : ""}} ">
+          <a class="nav-link" href="/blog">Blog</a>
+        </li>
        
         <li class="nav-item  {{Request::is('about') ? "active" : ""}} ">
           <a class="nav-link" href="/about">About</a>
@@ -28,10 +32,11 @@
             My Account
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href=" {{ route('posts.index') }} ">Posts</a>
             <a class="dropdown-item" href="#">Another action</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            {{-- <li role="separator" class="divider"></li> --}}
+            <a class="dropdown-item" href="#">Logout</a>
           </div>
         </li>
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

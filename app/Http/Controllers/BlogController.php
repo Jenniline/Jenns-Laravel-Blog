@@ -7,6 +7,16 @@ use App\Post;
 
 class BlogController extends Controller
 {
+
+    public function getIndex(){
+        $posts = Post::paginate(3);
+
+        return view('blog.index')->withPosts($posts);
+        // return view('blog.index', ['posts' => $posts]);
+
+    }
+
+
     public function getSingle($slug){
 
     //    return  $slug;   
