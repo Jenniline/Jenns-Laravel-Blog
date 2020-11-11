@@ -14,6 +14,17 @@
 
 
 Route::group(['middleware' => ['web']], function()  {
+    // Authentication Routes
+    Route::get('auth/login','UserAuth\AuthController@getLogin');
+    Route::post('auth/login', 'UserAuth\AuthController@postLogin');
+    Route::get('auth/logout','UserAuth\AuthController@getLogout'); 
+
+    // Registration routes
+    Route::get('auth/logout','UserAuth\AuthController@getRegister'); 
+    Route::post('auth/logout','UserAuth\AuthController@getLogout'); 
+
+
+
     Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');
     Route::get('blog',['uses' => 'BlogController@getIndex', 'as' => 'blog.index']);
 
