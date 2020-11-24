@@ -12,6 +12,9 @@
 
         <div class="container">
             @include('partials._messages')
+
+        {{Auth::check() ? "Logged In" : "Logged Out"}}                
+           
                 <!-- Introducing blade using Laravel --> 
             @yield('content')     
 

@@ -44,7 +44,6 @@
                     <td> <a href=" {{route('posts.show',$post->id)}} " class="btn btn-primary">View</a> </td>
                     <td> <a href=" {{route('posts.edit',$post->id)}} " class="btn btn btn-warning">Edit</a>  </td> 
                     <td> <a href=" {{route('posts.destroy',$post->id)}}"class="btn btn btn-danger">Delete</a>  </td> 
-
                 </tr>
           @endforeach
         </tbody>
@@ -56,7 +55,7 @@
             <div class=col-8>
               {{ $posts->links() }}
             </div>
-            
+            {{-- Pagination --}}
             <div class=col-4>
                 Page {{$posts->currentPage()}} of {{$posts->total()}}
             </div>

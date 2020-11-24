@@ -14,14 +14,16 @@
 
 
 Route::group(['middleware' => ['web']], function()  {
-    // Authentication Routes
+    // Authentication Routes for loggin In
     Route::get('auth/login','UserAuth\AuthController@getLogin');
     Route::post('auth/login', 'UserAuth\AuthController@postLogin');
     Route::get('auth/logout','UserAuth\AuthController@getLogout'); 
 
-    // Registration routes
-    Route::get('auth/logout','UserAuth\AuthController@getRegister'); 
-    Route::post('auth/logout','UserAuth\AuthController@getLogout'); 
+    // Registration routes for registering
+    // Route::get('auth/register','UserAuth\AuthController@getRegister'); 
+    Route::get('auth/register','Auth\RegisterController@'); 
+
+    Route::post('auth/register','Auth\RegisterController@'); 
 
 
 
