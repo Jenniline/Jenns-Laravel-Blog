@@ -20,10 +20,8 @@ Route::group(['middleware' => ['web']], function()  {
     Route::get('auth/logout','UserAuth\AuthController@getLogout'); 
 
     // Registration routes for registering
-    // Route::get('auth/register','UserAuth\AuthController@getRegister'); 
-    Route::get('auth/register','Auth\RegisterController@'); 
-
-    Route::post('auth/register','Auth\RegisterController@'); 
+    Route::get('auth/register','UserAuth\AuthController@getRegister'); 
+    Route::post('auth/register','UserAuth\AuthController@getRegister'); 
 
 
 

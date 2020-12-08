@@ -20,6 +20,6 @@
       <label class="form-check-label" for="exampleCheck1">remember me</label>
     </div>
     <button type="submit" class="btn btn-primary">Login</button>
-  </form>
+</form>
 
 @endsection
